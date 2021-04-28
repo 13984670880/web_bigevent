@@ -1,0 +1,76 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: url(/assets/images/login_bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+
+/* 登录 / 注册样式 */
+
+.loginAndRegBox {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+
+/* 后台管理系统标题 */
+
+.title-box {
+    height: 60px;
+    background: url('/assets/images/login_title.png') no-repeat center;
+}
+
+
+/* 注册 */
+
+.reg-box {
+    display: none
+}
+
+
+/* 表单样式 */
+
+.layui-form {
+    padding: 0 30px;
+}
+
+
+/*  去注册样式 */
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links a {
+    font-size: 12px;
+}
+
+
+/* 图标定位 */
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+
+/* 输入框样式 */
+
+.layui-input {
+    padding-left: 32px;
+}
