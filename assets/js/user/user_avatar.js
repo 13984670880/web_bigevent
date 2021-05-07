@@ -50,9 +50,9 @@ $(function() {
             success: function(res) {
                 // console.log(res);
                 if (res.status !== 0) {
-                    return layer.msg('更新头像失败！');
+                    return layer.msg('更新头像失败！', { icon: 2, time: 1500 });
                 }
-                layer.msg('更新头像成功！');
+                layer.msg('更新头像成功！', { icon: 1, time: 1500 });
                 // 调用父页面中的方法，重新渲染用户的头像和用户的信息
                 window.parent.getUserInfo();
             }

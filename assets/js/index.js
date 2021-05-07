@@ -11,11 +11,16 @@ $(function() {
                 // console.log('ok');
                 // 1.清空本地存储的 token
                 localStorage.removeItem('token');
-                // 2.退出之后跳转到登录页面
-                window.location.href = '/login.html';
-                // 关闭 comfirm 询问框
+                // 2.关闭 comfirm 询问框
                 layer.close(index);
-            });
+                // 3.返回用户成功退出登录的信息框
+                layer.msg('已退出登录！', { icon: 1, time: 1000 });
+                // 4.ES6的语法书写延时器来跳转到登录页
+                setTimeout(() => {
+                    // 5.退出之后跳转到登录页面
+                    window.location.href = '/login.html';
+                }, 1800);
+            })
         })
     })
     // 获取用户的基本信息
@@ -54,7 +59,7 @@ function renderAvatar(user) {
     // 1.获取用户的名称
     var userName = user.nickname || user.username;
     // 2.设置欢迎文本
-    $('#welcome').html('欢迎&nbsp&nbsp' + userName);
+    $('#welcome').html('欢迎您&nbsp&nbsp' + userName);
     // 3.按需渲染用户的头像
     if (user.user_pic !== null) {
         // 3.1 渲染图片头像

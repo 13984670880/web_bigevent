@@ -27,9 +27,15 @@ $(function() {
             success: function(res) {
                 // console.log(res);
                 if (res.status !== 0) {
-                    return layer.msg('原密码不正确！')
+                    return layer.msg('原密码不正确！', {
+                        icon: 2,
+                        time: 1500
+                    })
                 }
-                layer.msg('密码修改成功！');
+                layer.msg('密码修改成功！', {
+                    icon: 1,
+                    time: 1500
+                });
                 // 重置表单数据
                 $('.layui-form')[0].reset();
             }

@@ -17,9 +17,12 @@ $(function() {
             url: '/my/userinfo',
             success: function(res) {
                 if (res.status !== 0) {
-                    return layer.msg('获取用户信息失败！')
+                    return layer.msg('获取用户信息失败！', {
+                        icon: 2,
+                        time: 1500
+                    })
                 }
-                console.log(res);
+                // console.log(res);
                 // 调用 from.val() 快速为表单赋值
                 form.val('formUserInfo', res.data)
             }
@@ -42,11 +45,17 @@ $(function() {
             url: '/my/userinfo',
             data: $(this).serialize(),
             success: function(res) {
-                console.log(res);
+                // console.log(res);
                 if (res.status !== 0) {
-                    return layer.msg('更新用户信息失败！')
+                    return layer.msg('更新用户信息失败！', {
+                        icon: 2,
+                        time: 1500
+                    })
                 }
-                layer.msg('更新用户信息成功！');
+                layer.msg('更新用户信息成功！', {
+                    icon: 1,
+                    time: 1500
+                });
                 // 调用父页面中的方法，重新渲染用户的头像和用户的信息
                 window.parent.getUserInfo();
             }
